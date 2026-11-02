@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="royal-blue">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>City Cargo — Modern Truck Booking & Freight Intelligence across India</title>
+  <meta name="description" content="Book verified trucks across India in under 5 minutes. Instant freight estimates, live GPS tracking, ₹50L+ transit insurance and pan-India fleet access." />
+  <meta name="keywords" content="City Cargo, truck booking online, FTL freight India, packers and movers, transport services, goods transit" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="City Cargo — Smart Truck Booking & Freight Logistics" />
+  <meta property="og:description" content="Instant freight estimates, verified trucks, and live tracking across 600+ Indian cities." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" id="announcementBar">
+    <div class="announcement-content">
+      <span class="badge-live"><span class="pulse-dot"></span> Live Fleet Network</span>
+      <p class="announcement-text">
+        <strong>Pan-India Corridors Active:</strong> Instant vehicle placement on Delhi–Mumbai, Bengaluru–Chennai, Kolkata & Pune corridors.
+      </p>
+      <div class="announcement-actions">
+        <a href="tel:+919555013557" class="quick-call-link" id="topBarPhone">
+          <svg viewBox="0 0 24 24" class="icon-sm" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          24x7 Helpline: +91 95550 13557
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Modern Header -->
+  <header class="site-header" id="mainHeader">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" id="brandLogo" aria-label="City Cargo Packers and Movers">
+        <img src="./logo.png" alt="City Cargo Packers and Movers" class="brand-logo-img" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#fare-estimator" class="nav-link active">Rate Estimator</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#video-tour" class="nav-link">Packing Video</a>
+        <a href="#fleet" class="nav-link">Fleet Explorer</a>
+        <a href="#why-us" class="nav-link">Why City Cargo</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+      </nav>
+
+      <!-- Header Utilities -->
+      <div class="header-utilities">
+        <!-- Palette Switcher -->
+        <div class="theme-selector-wrap" title="Change Theme Style">
+          <button class="theme-btn" id="themeBtn" aria-label="Select Color Theme">
+            <span class="theme-dot" id="currentThemeDot"></span>
+            <span class="theme-label hidden-mobile">Theme</span>
+            <svg viewBox="0 0 24 24" class="icon-xs" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="theme-dropdown" id="themeDropdown">
+            <button class="theme-option active" data-set-theme="royal-blue">
+              <span class="theme-preview royal-blue"></span>
+              <span>Royal Cobalt (Modern Clean)</span>
+            </button>
+            <button class="theme-option" data-set-theme="emerald-tech">
+              <span class="theme-preview emerald-tech"></span>
+              <span>Emerald Logistics</span>
+            </button>
+            <button class="theme-option" data-set-theme="dark-obsidian">
+              <span class="theme-preview dark-obsidian"></span>
+              <span>Obsidian Slate (High Contrast)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- WhatsApp Instant CTA -->
+        <a href="https://wa.me/919555013557?text=Hi%20City%20Cargo%2C%20I%20want%20to%20book%20a%20truck.%20Please%20share%20vehicle%20options%20and%20rates." 
+           target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="headerWhatsappBtn" title="Chat on WhatsApp">
+          <svg viewBox="0 0 24 24" class="icon-sm" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span class="btn-text">WhatsApp</span>
+        </a>
+
+        <!-- Primary Call CTA -->
+        <a href="tel:+919555013557" class="btn-primary" id="headerCallBtn" title="Call City Cargo: +91 95550 13557">
+          <svg viewBox="0 0 24 24" class="icon-xs" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Call Now</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+          <svg viewBox="0 0 24 24" class="icon-md" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="mobile-nav">
+        <a href="#fare-estimator" class="mobile-nav-link">Rate Estimator</a>
+        <a href="#services" class="mobile-nav-link">Our Services</a>
+        <a href="#video-tour" class="mobile-nav-link">Packing Video</a>
+        <a href="#fleet" class="mobile-nav-link">Fleet Explorer</a>
+        <a href="#why-us" class="mobile-nav-link">Why City Cargo</a>
+        <a href="#reviews" class="mobile-nav-link">Google Reviews</a>
+        <div class="mobile-actions">
+          <a href="tel:+919555013557" class="mobile-phone-link">
+            <svg viewBox="0 0 24 24" class="icon-sm" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Helpline (+91 95550 13557)
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Clean Fare Estimator -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-container">
+        
+        <!-- Left Hero Intro -->
+        <div class="hero-intro">
+          <div class="pill-badge">
+            <svg viewBox="0 0 24 24" class="icon-xs" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>India’s Modern Digital Freight Network</span>
+          </div>
+
+          <h1 class="hero-title">
+            Book verified trucks in <span class="gradient-text">under 5 minutes.</span>
+          </h1>
+
+          <p class="hero-description">
+            Transparent pricing, 26 Lakh+ GPS-monitored vehicles, and guaranteed on-time delivery across 600+ Indian cities with zero broker markup.
+          </p>
+
+          <!-- Key Highlights Badges -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <span class="stat-number">26L+</span>
+              <span class="stat-label">Verified Trucks</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-item">
+              <span class="stat-number">600+</span>
+              <span class="stat-label">Cities Covered</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-item">
+              <span class="stat-number">98.4%</span>
+              <span class="stat-label">On-Time Arrival</span>
+            </div>
+          </div>
+
+          <!-- Live Transit Status Pill -->
+          <div class="live-status-card" id="liveSimCard">
+            <div class="live-status-header">
+              <div class="pulse-indicator"></div>
+              <span class="live-status-title">Live Dispatch Simulation</span>
+              <span class="live-status-time" id="simTime">Updated just now</span>
+            </div>
+            <div class="live-status-body">
+              <div class="route-info">
+                <span class="route-point" id="simOrigin">Lucknow</span>
+                <span class="route-arrow">→</span>
+                <span class="route-point" id="simDest">Kanpur</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar-fill" style="width: 72%;"></div>
+              </div>
+              <div class="live-meta">
+                <span>Vehicle: <strong id="simVehicle">Tata Ace / Dost</strong></span>
+                <span class="eta-pill" id="simEtaPill">ETA: 1h 45m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Clean & Simple Instant Fare Estimator Card -->
+        <div class="hero-calculator-wrap" id="fare-estimator">
+          <div class="calc-card simple-calc-card">
+            <div class="calc-header simple-header">
+              <div class="calc-header-title">
+                <h2>Instant Freight Estimator</h2>
+                <p>Transparent rates based on real road distance</p>
+              </div>
+              <span class="insurance-tag" title="Included on all loads">
+                <svg viewBox="0 0 24 24" class="icon-xs" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                ₹50L Goods Cover
+              </span>
+            </div>
+
+            <form class="calc-form" id="freightCalcForm" onsubmit="event.preventDefault();">
+              <!-- Route City Inputs -->
+              <div class="route-inputs-group">
+                <!-- Loading City -->
+                <div class="input-block">
+                  <label for="pickupCityInput" class="input-label">
+                    <span class="dot-origin"></span>
+                    Loading City (Pickup)
+                  </label>
+                  <div class="input-field-wrap">
+                    <svg viewBox="0 0 24 24" class="input-icon" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <input type="text" id="pickupCityInput" class="calc-input" placeholder="e.g. Lucknow, UP" value="Lucknow" autocomplete="off" />
+                  </div>
+                  <div class="autocomplete-list" id="pickupSuggestions"></div>
+                </div>
+
+                <!-- Swap Button -->
+                <button type="button" class="btn-swap-cities" id="swapCitiesBtn" title="Swap pickup and drop cities" aria-label="Swap pickup and drop cities">
+                  <svg viewBox="0 0 24 24" class="icon-sm" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16V4M7 4L3 8M7 4l4 4M17 8v12M17 20l4-4M17 20l-4-4"/></svg>
+                </button>
+
+                <!-- Unloading City -->
+                <div class="input-block">
+                  <label for="dropCityInput" class="input-label">
+                    <span class="dot-destination"></span>
+                    Unloading City (Drop)
+                  </label>
+                  <div class="input-field-wrap">
+                    <svg viewBox="0 0 24 24" class="input-icon" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <input type="text" id="dropCityInput" class="calc-input" placeholder="e.g. Kanpur, UP" value="Kanpur" autocomplete="off" />
+                  </div>
+                  <div class="autocomplete-list" id="dropSuggestions"></div>
+                </div>
+              </div>
+
+              <!-- Truck Category Selector -->
+              <div class="input-block" style="margin-top: 12px;">
+                <label class="input-label">Select Vehicle</label>
+                <div class="truck-grid-selector simple-truck-grid" id="truckSelector">
+                  <button type="button" class="truck-card-option active" data-truck-id="tata-ace">
+                    <span class="truck-card-icon">🛻</span>
+                    <div class="truck-card-info">
+                      <span class="truck-name">Tata Ace / Dost</span>
+                      <span class="truck-cap">1.5 Ton</span>
+                    </div>
+                  </button>
+                  <button type="button" class="truck-card-option" data-truck-id="pickup-8ft">
+                    <span class="truck-card-icon">🚛</span>
+                    <div class="truck-card-info">
+                      <span class="truck-name">Bolero Pickup</span>
+                      <span class="truck-cap">2.0 Ton</span>
+                    </div>
+                  </button>
+                  <button type="button" class="truck-card-option" data-truck-id="eicher-14ft">
+                    <span class="truck-card-icon">🚚</span>
+                    <div class="truck-card-info">
+                      <span class="truck-name">14ft Eicher</span>
+                      <span class="truck-cap">4.0 Ton</span>
+                    </div>
+                  </button>
+                  <button type="button" class="truck-card-option" data-truck-id="container-32ft">
+                    <span class="truck-card-icon">🚛</span>
+                    <div class="truck-card-info">
+                      <span class="truck-name">32ft Multi-Axle</span>
+                      <span class="truck-cap">15-18 Ton</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Simple Clean Output Card -->
+              <div class="calc-output-card simple-output-card" id="calcOutput">
+                <div class="simple-metrics-strip">
+                  <div class="simple-metric-pill">
+                    <span class="dot-metric"></span>
+                    <span id="calcDistance">82 km</span>
+                  </div>
+                  <div class="simple-metric-pill">
+                    <span class="dot-metric"></span>
+                    <span id="calcTransitTime">1h 45m</span>
+                  </div>
+                  <div class="simple-metric-pill">
+                    <span class="dot-metric"></span>
+                    <span id="calcToll">Tolls & Tax Included</span>
+                  </div>
+                </div>
+
+                <div class="calc-price-row simple-price-row">
+                  <div class="price-breakdown">
+                    <span class="price-label">Estimated Total Freight</span>
+                    <span class="price-note">All-inclusive guaranteed rate</span>
+                  </div>
+                  <div class="price-amount-box">
+                    <span class="rupee-symbol">₹</span>
+                    <span class="price-display" id="calcTotalPrice">1,700</span>
+                    <span class="price-tax-label">+ GST</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="calc-actions-grid simple-actions-grid">
+                <a href="tel:+919555013557" class="btn-estimate-call" id="callNowFromCalcBtn" title="Call City Cargo: +91 95550 13557">
+                  <svg viewBox="0 0 24 24" class="icon-sm" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span>Call Now</span>
+                </a>
+                <a href="https://wa.me/919555013557?text=Hi%20City%20Cargo%2C%20I%20want%20to%20book%20a%20truck%20from%20Lucknow%20to%20Kanpur." 
+                   target="_blank" rel="noopener noreferrer" class="btn-whatsapp-quote" id="whatsappQuoteBtn">
+                  <svg viewBox="0 0 24 24" class="icon-sm" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="section-container" id="services">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Comprehensive Transport Solutions</span>
+        <h2 class="section-heading">Engineered for Seamless Movement</h2>
+        <p class="section-subheading">
+          Whether you need a full dedicated container, cost-efficient part loads, or corporate shifting, City Cargo provides certified logistics across India.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <article class="service-card">
+          <div class="service-icon-box">
+            <svg viewBox="0 0 24 24" class="service-icon" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+          </div>
+          <h3 class="service-title">Full Truck Load (FTL)</h3>
+          <p class="service-desc">
+            Direct point-to-point dedicated vehicles from 1 Ton mini-trucks to 32ft multi-axles with sealed containers and dedicated GPS tracking.
+          </p>
+          <ul class="service-features">
+            <li>✓ Guaranteed instant vehicle placement</li>
+            <li>✓ Non-stop direct corridor transit</li>
+            <li>✓ Digital e-Bilty and proof of delivery</li>
+          </ul>
+          <button class="service-action-btn" onclick="document.getElementById('loadTypeSelect').value='ftl'; window.scrollTo({top:0, behavior:'smooth'});">
+            Estimate FTL Freight →
+          </button>
+        </article>
+
+        <!-- Service Card 2 -->
+        <article class="service-card highlighted-service">
+          <div class="service-badge">Cost Saver</div>
+          <div class="service-icon-box">
+            <svg viewBox="0 0 24 24" class="service-icon" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3 class="service-title">Part Truck Load (PTL)</h3>
+          <p class="service-desc">
+            Only pay for the exact volume or weight you occupy on regular scheduled routes. Ideal for small-to-mid consignments and regular cargo.
+          </p>
+          <ul class="service-features">
+            <li>✓ Per-kg and per-cubic-foot rates</li>
+            <li>✓ Scheduled departures daily</li>
+            <li>✓ Centralized hub consolidation</li>
+          </ul>
+          <button class="service-action-btn" onclick="document.getElementById('loadTypeSelect').value='ptl'; window.scrollTo({top:0, behavior:'smooth'});">
+            Explore PTL Rates →
+          </button>
+        </article>
+
+        <!-- Service Card 3 -->
+        <article class="service-card">
+          <div class="service-icon-box">
+            <svg viewBox="0 0 24 24" class="service-icon" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="service-title">Packers & Movers</h3>
+          <p class="service-desc">
+            Premium multi-layer packaging, disassembly, loading, safe transport, and unpacking for residential and corporate relocations pan-India.
+          </p>
+          <ul class="service-features">
+            <li>✓ Multi-layer bubble & corrugated wrap</li>
+            <li>✓ Trained handling staff & supervision</li>
+            <li>✓ Full transit insurance coverage</li>
+          </ul>
+          <button class="service-action-btn" onclick="document.getElementById('goodsTypeSelect').value='household'; window.scrollTo({top:0, behavior:'smooth'});">
+            Calculate Shifting Cost →
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- City Cargo Packers & Movers In Action (Video Showcase) -->
+    <section class="section-container video-showcase-section" id="video-tour">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">
+          <svg viewBox="0 0 24 24" class="icon-xs" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Packers & Movers In Action
+        </span>
+        <h2 class="section-heading">Professional Packaging & Safe Relocation</h2>
+        <p class="section-subheading">
+          Watch our trained crew pack, bubble-wrap, and box household and commercial valuables with verified care.
+        </p>
+      </div>
+
+      <div class="video-player-wrapper">
+        <div class="video-container-card">
+          <video 
+            id="brandActionVideo" 
+            class="showcase-video" 
+            src="./3.mp4" 
+            poster="./video-poster.jpg"
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            controls
+            preload="metadata"
+          >
+            <source src="./3.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="video-badge-overlay">
+            <span class="live-pulse-badge">
+              <span class="pulse-dot"></span> City Cargo Verified Packing
+            </span>
+          </div>
+        </div>
+
+        <!-- Video Feature Highlights -->
+        <div class="video-highlights-grid">
+          <div class="video-highlight-item">
+            <div class="video-highlight-icon">📦</div>
+            <div class="video-highlight-text">
+              <strong>Multi-Layer Bubble Wrap</strong>
+              <p>Precision wrapping on all fragile items, mirrors, TVs & glassware.</p>
+            </div>
+          </div>
+          <div class="video-highlight-item">
+            <div class="video-highlight-icon">👷</div>
+            <div class="video-highlight-text">
+              <strong>Trained Uniformed Crew</strong>
+              <p>Experienced background-verified staff handling every relocation step.</p>
+            </div>
+          </div>
+          <div class="video-highlight-item">
+            <div class="video-highlight-icon">🛡️</div>
+            <div class="video-highlight-text">
+              <strong>Heavy-Duty Branded Cartons</strong>
+              <p>Thick corrugated boxes designed to withstand road bumps and vibrations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instant Call/WhatsApp Bar -->
+        <div class="video-cta-bar">
+          <div class="video-cta-info">
+            <strong>Planning a relocation or household shift?</strong>
+            <span>Speak directly with our moving coordinator or get a quick WhatsApp estimate.</span>
+          </div>
+          <div class="video-cta-buttons">
+            <a href="tel:+919555013557" class="btn-primary" title="Call City Cargo: +91 95550 13557">
+              <svg viewBox="0 0 24 24" class="icon-xs" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Call +91 95550 13557</span>
+            </a>
+            <a href="https://wa.me/919555013557?text=Hi%20City%20Cargo%2C%20I%20saw%20your%20packing%20video.%20I%20want%20to%20book%20packers%20and%20movers." 
+               target="_blank" rel="noopener noreferrer" class="btn-whatsapp" title="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" class="icon-sm" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Explorer Section -->
+    <section class="section-container bg-surface" id="fleet">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Fleet Specifications</span>
+        <h2 class="section-heading">Verified Trucks for Every Tonnage</h2>
+        <p class="section-subheading">
+          Explore vehicle dimensions, payload capacity, and typical cargo compatibility across our 26 Lakh+ verified network.
+        </p>
+      </div>
+
+      <div class="fleet-tabs-wrapper">
+        <div class="fleet-tabs-nav" id="fleetNav">
+          <button class="fleet-tab active" data-fleet="mini">Mini Trucks (1 – 2.5T)</button>
+          <button class="fleet-tab" data-fleet="lcv">LCV / Eicher (3.5 – 8T)</button>
+          <button class="fleet-tab" data-fleet="mcv">Heavy Trucks (10 – 20T)</button>
+          <button class="fleet-tab" data-fleet="trailer">Trailers & Containers (25 – 40T)</button>
+        </div>
+
+        <div class="fleet-cards-grid" id="fleetDisplayGrid">
+          <!-- Dynamic Fleet Content rendered via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Why City Cargo vs Traditional Brokers (Clean Comparison) -->
+    <section class="section-container bg-surface" id="why-us">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">The Modern Advantage</span>
+        <h2 class="section-heading">Why Leading Enterprises Choose City Cargo</h2>
+        <p class="section-subheading">
+          Say goodbye to untraceable brokers, fluctuating spot rates, and delayed deliveries.
+        </p>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="feature-col">Feature Comparison</th>
+              <th class="brand-col active-brand">
+                <span class="table-brand-tag">CITY CARGO</span>
+              </th>
+              <th class="traditional-col">Traditional Truck Brokers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Booking Time</strong></td>
+              <td class="brand-cell"><span class="badge-success">Under 5 Minutes</span></td>
+              <td class="trad-cell">3 to 6 Hours of Phone Calls</td>
+            </tr>
+            <tr>
+              <td><strong>Pricing Transparency</strong></td>
+              <td class="brand-cell"><span class="badge-success">Upfront Guaranteed Rates</span></td>
+              <td class="trad-cell">Arbitrary Broker Markups</td>
+            </tr>
+            <tr>
+              <td><strong>Live GPS Tracking</strong></td>
+              <td class="brand-cell"><span class="badge-success">24x7 Live Link for Consignee</span></td>
+              <td class="trad-cell">Manual Driver Calling</td>
+            </tr>
+            <tr>
+              <td><strong>Driver & Fleet Verification</strong></td>
+              <td class="brand-cell"><span class="badge-success">100% RC, DL & Fitness Verified</span></td>
+              <td class="trad-cell">Unverified 3rd-Party Drivers</td>
+            </tr>
+            <tr>
+              <td><strong>Goods-in-Transit Insurance</strong></td>
+              <td class="brand-cell"><span class="badge-success">Up to ₹50 Lakh+ Coverage</span></td>
+              <td class="trad-cell">Zero or Complicated Claims</td>
+            </tr>
+            <tr>
+              <td><strong>Documentation (e-Bilty / POD)</strong></td>
+              <td class="brand-cell"><span class="badge-success">Instant Digital e-Bilty</span></td>
+              <td class="trad-cell">Physical Paperwork Delays</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Transit Protection & Security Banner -->
+    <section class="insurance-banner">
+      <div class="insurance-container">
+        <div class="insurance-text">
+          <div class="shield-icon-wrap">
+            <svg viewBox="0 0 24 24" class="shield-icon" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <span class="insurance-eyebrow">Enterprise Peace of Mind</span>
+            <h2 class="insurance-title">Up to ₹50 Lakh+ Transit Coverage for Every Shipment</h2>
+            <p class="insurance-desc">
+              Comprehensive goods-in-transit policy powered by top national insurers. Protects your raw materials, finished stock, and equipment against road transit risks.
+            </p>
+          </div>
+        </div>
+        <div class="insurance-cta-box">
+          <span class="insurance-price">Starting from ₹299</span>
+          <button class="btn-insurance-opt" id="insuranceInquireBtn">Add Transit Protection</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Customer Reviews Section -->
+    <section class="section-container" id="reviews">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Verified Testimonials</span>
+        <h2 class="section-heading">Google Customer Reviews</h2>
+        <p class="section-subheading">
+          Trusted by 50,000+ manufacturers, distributors, and logistics teams across India.
+        </p>
+      </div>
+
+      <!-- Rating Summary Card -->
+      <div class="reviews-summary-card">
+        <div class="rating-left">
+          <div class="rating-badge-google">
+            <svg viewBox="0 0 24 24" class="icon-md" fill="none">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Google Verified Reviews</span>
+          </div>
+          <div class="big-rating-number">4.9<span class="out-of">/ 5.0</span></div>
+          <div class="stars-row">
+            ★★★★★
+          </div>
+          <span class="rating-count">Based on 520+ verified corporate consignments</span>
+        </div>
+
+        <div class="rating-bars">
+          <div class="bar-row">
+            <span class="star-label">5 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div>
+            <span class="bar-count">468</span>
+          </div>
+          <div class="bar-row">
+            <span class="star-label">4 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 10%;"></div></div>
+            <span class="bar-count">52</span>
+          </div>
+          <div class="bar-row">
+            <span class="star-label">3 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+            <span class="bar-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews Carousel / Cards -->
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">HB</div>
+            <div>
+              <h4 class="reviewer-name">Hemant Bhatia</h4>
+              <span class="reviewer-meta">Packaging Manufacturer · Udaipur</span>
+            </div>
+            <span class="verified-pill">✓ Verified</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-body">
+            "Moved fragile corrugated boxes and packaging from Udaipur to Delhi. The driver was seasoned, stayed within speed limits, and secured tarpaulins properly. The 24x7 control tower helpline was responsive throughout."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar" style="background:#2563EB;">RC</div>
+            <div>
+              <h4 class="reviewer-name">Rashmi Chauhan</h4>
+              <span class="reviewer-meta">Textile Exporter · Surat</span>
+            </div>
+            <span class="verified-pill">✓ Verified</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-body">
+            "The real-time GPS tracking link allowed our consignee to track the truck directly. It eliminated endless phone calls and helped our destination warehouse in Bengaluru prepare unloading beforehand."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar" style="background:#059669;">PS</div>
+            <div>
+              <h4 class="reviewer-name">Pradeep Shukla</h4>
+              <span class="reviewer-meta">Steel & Metals · Cuttack</span>
+            </div>
+            <span class="verified-pill">✓ Verified</span>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-body">
+            "Upfront rate estimation was 100% accurate. No hidden toll demands, no driver excuses at the time of loading. Digital e-Bilty arrived right into WhatsApp within 10 minutes of booking."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clean 24x7 Support & Helpline Hub -->
+    <section class="section-container bg-surface" id="helpline">
+      <div class="helpline-card">
+        <div class="helpline-header">
+          <span class="live-status-dot"></span>
+          <h2>24x7 Dedicated Dispatch & Customer Care</h2>
+          <p>Always speak with a real logistics coordinator — available round the clock.</p>
+        </div>
+        <div class="helpline-grid single-helpline-grid">
+          <a href="tel:+919555013557" class="helpline-item">
+            <div class="helpline-icon">📞</div>
+            <div class="helpline-details">
+              <span class="helpline-label">Direct Helpline & Dispatch</span>
+              <span class="helpline-val">+91 95550 13557</span>
+            </div>
+          </a>
+          <a href="https://wa.me/919555013557?text=Hi%20City%20Cargo%2C%20I%20want%20to%20book%20a%20truck." target="_blank" rel="noopener noreferrer" class="helpline-item helpline-whatsapp-item">
+            <div class="helpline-icon">💬</div>
+            <div class="helpline-details">
+              <span class="helpline-label">WhatsApp Live Support</span>
+              <span class="helpline-val">+91 95550 13557</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Registered Office Address -->
+        <div class="helpline-address-strip">
+          <div class="address-badge">
+            <span class="pin-icon">📍</span>
+            <div>
+              <strong>Head Office & Central Dispatch Hub:</strong>
+              <p>House No. 551, Azad Nagar, Kanpur Road, near Amausi Airport, Transport Nagar, Lucknow, Uttar Pradesh 226023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Professional Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-col-brand">
+          <a href="#" class="footer-brand-logo" aria-label="City Cargo Packers and Movers">
+            <img src="./logo.png" alt="City Cargo Packers and Movers" class="footer-logo-img" />
+          </a>
+          <p class="footer-desc">
+            City Cargo is India's premier digital freight network connecting verified vehicle owners with shippers, manufacturers, and businesses across India.
+          </p>
+          <div class="footer-contact-links">
+            <a href="tel:+919555013557">📞 +91 95550 13557</a>
+            <a href="mailto:support@citycargo.city">✉️ support@citycargo.city</a>
+            <div class="footer-office-address">
+              <span class="footer-pin-icon">📍</span>
+              <p>House No. 551, Azad Nagar, Kanpur Road, near Amausi Airport, Transport Nagar, Lucknow, UP 226023</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Full Truck Load (FTL)</a></li>
+            <li><a href="#services">Part Truck Load (PTL)</a></li>
+            <li><a href="#services">Packers and Movers</a></li>
+            <li><a href="#fleet">Fleet Management & GPS</a></li>
+            <li><a href="#fare-estimator">Instant Fare Estimator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Top Logistics Hubs</h4>
+          <div class="city-tags-grid">
+            <a href="#fare-estimator" class="city-tag">Delhi NCR</a>
+            <a href="#fare-estimator" class="city-tag">Mumbai</a>
+            <a href="#fare-estimator" class="city-tag">Bengaluru</a>
+            <a href="#fare-estimator" class="city-tag">Chennai</a>
+            <a href="#fare-estimator" class="city-tag">Pune</a>
+            <a href="#fare-estimator" class="city-tag">Hyderabad</a>
+            <a href="#fare-estimator" class="city-tag">Ahmedabad</a>
+            <a href="#fare-estimator" class="city-tag">Kolkata</a>
+            <a href="#fare-estimator" class="city-tag">Jaipur</a>
+            <a href="#fare-estimator" class="city-tag">Surat</a>
+            <a href="#fare-estimator" class="city-tag">Lucknow</a>
+            <a href="#fare-estimator" class="city-tag">Indore</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Partner with Us</h4>
+          <p class="partner-text">Are you a fleet owner or truck operator? Join our verified network and get steady, guaranteed freight loads.</p>
+          <button class="btn-partner-join" id="truckOwnerJoinBtn">I'm a Truck Owner</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 City Cargo Logistics. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>·</span>
+          <a href="#">Terms of Service</a>
+          <span>·</span>
+          <a href="#">Transit Insurance Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Confirm Truck Booking</h3>
+          <p class="modal-sub">Lock your rate with zero upfront advance payment</p>
+        </div>
+        <button class="modal-close-btn" id="closeBookingModal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <form class="modal-form" id="confirmBookingForm" onsubmit="event.preventDefault();">
+        <div class="modal-summary-box">
+          <div class="modal-summary-row">
+            <span class="summary-label">Route:</span>
+            <strong id="modalRouteSummary">Lucknow → Kanpur</strong>
+          </div>
+          <div class="modal-summary-row">
+            <span class="summary-label">Vehicle Selected:</span>
+            <strong id="modalVehicleSummary">32ft Multi-Axle Container</strong>
+          </div>
+          <div class="modal-summary-row">
+            <span class="summary-label">Estimated Rate:</span>
+            <strong class="highlight-price" id="modalPriceSummary">₹42,500</strong>
+          </div>
+        </div>
+
+        <div class="modal-input-group">
+          <label for="bookingName">Your Name / Company Name</label>
+          <input type="text" id="bookingName" class="calc-input" placeholder="e.g. Ramesh Kumar / ABC Logistics" required />
+        </div>
+
+        <div class="modal-input-group">
+          <label for="bookingPhone">Contact Phone Number</label>
+          <input type="tel" id="bookingPhone" class="calc-input" placeholder="e.g. +91 98765 43210" required />
+        </div>
+
+        <div class="modal-input-group">
+          <label for="bookingDate">Expected Loading Date</label>
+          <input type="date" id="bookingDate" class="calc-input" />
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn-confirm-booking" id="submitBookingBtn">
+            Confirm & Request Vehicle Dispatch
+          </button>
+        </div>
+      </form>
+
+      <!-- Confirmation Toast -->
+      <div class="modal-success-state" id="modalSuccessState" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h3>Booking Request Received!</h3>
+        <p>Our dispatch manager is reviewing available vehicles on your corridor. We will connect with you via call/WhatsApp within 5 minutes.</p>
+        <button class="btn-primary" onclick="document.getElementById('bookingModal').classList.remove('open');">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Mobile Bottom CTA Bar -->
+  <aside class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Quick Action Bar">
+    <a href="tel:+919555013557" class="mobile-bar-btn call-bar-btn" id="mobileBarCallBtn">
+      <svg viewBox="0 0 24 24" class="icon-sm" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call Now</span>
+    </a>
+    <a href="https://wa.me/919555013557?text=Hi%20City%20Cargo%2C%20I%20want%20to%20book%20a%20truck%20or%20packers%20and%20movers." 
+       target="_blank" rel="noopener noreferrer" class="mobile-bar-btn whatsapp-bar-btn" id="mobileBarWhatsappBtn">
+      <svg viewBox="0 0 24 24" class="icon-sm" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </aside>
+
+  <!-- JavaScript Module -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

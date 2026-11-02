@@ -1,0 +1,14 @@
+{
+  "name": "citycargo-modern",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Modern, clean, high-tech freight and truck booking platform inspired by City Cargo",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
