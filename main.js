@@ -588,4 +588,82 @@ document.addEventListener('DOMContentLoaded', () => {
       simTime.textContent = 'Updated ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     }
   }, 15000);
+
+  // 14. 4D Interactive Holographic Logo Engine
+  function init4DLogo() {
+    const scenes = document.querySelectorAll('.logo-4d-scene');
+    scenes.forEach(scene => {
+      const card = scene.querySelector('.logo-4d-card');
+      const glow = scene.querySelector('.logo-4d-glow');
+      if (!card) return;
+
+      let rafId = null;
+      let targetRotateX = 0;
+      let targetRotateY = 0;
+      const targetTranslateZ = 24;
+      let currentRotateX = 0;
+      let currentRotateY = 0;
+      let isInteracting = false;
+
+      function updateTilt() {
+        if (!isInteracting) return;
+        currentRotateX += (targetRotateX - currentRotateX) * 0.18;
+        currentRotateY += (targetRotateY - currentRotateY) * 0.18;
+
+        card.style.transform = `perspective(1200px) rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg) translateZ(${targetTranslateZ}px) scale(1.05)`;
+        rafId = requestAnimationFrame(updateTilt);
+      }
+
+      function handleMove(clientX, clientY) {
+        const rect = scene.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        targetRotateX = ((y - centerY) / centerY) * -18;
+        targetRotateY = ((x - centerX) / centerX) * 18;
+
+        if (glow) {
+          const glowX = ((x - centerX) / centerX) * 14;
+          const glowY = ((y - centerY) / centerY) * 14;
+          glow.style.transform = `translate3d(${glowX.toFixed(1)}px, ${glowY.toFixed(1)}px, 8px) scale(1.15)`;
+          glow.style.opacity = '1';
+        }
+
+        if (!isInteracting) {
+          isInteracting = true;
+          card.style.animationPlayState = 'paused';
+          rafId = requestAnimationFrame(updateTilt);
+        }
+      }
+
+      function handleLeave() {
+        isInteracting = false;
+        if (rafId) cancelAnimationFrame(rafId);
+        card.style.transform = '';
+        if (glow) {
+          glow.style.transform = '';
+          glow.style.opacity = '';
+        }
+        setTimeout(() => {
+          if (!isInteracting) {
+            card.style.animationPlayState = 'running';
+          }
+        }, 120);
+      }
+
+      scene.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
+      scene.addEventListener('mouseleave', handleLeave);
+
+      scene.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches[0]) {
+          handleMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+      scene.addEventListener('touchend', handleLeave);
+    });
+  }
+
+  init4DLogo();
 });

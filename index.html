@@ -24,7 +24,7 @@
     rel="stylesheet" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style.css?v=4d-anim" />
 </head>
 
 <body>
@@ -51,9 +51,20 @@
   <!-- Sticky Modern Header -->
   <header class="site-header" id="mainHeader">
     <div class="header-container">
-      <!-- Brand Logo -->
+      <!-- Brand Logo with 4D Animation Scene -->
       <a href="#" class="brand-logo" id="brandLogo" aria-label="City Cargo Packers and Movers">
-        <img src="./logo.png" alt="City Cargo Packers and Movers" class="brand-logo-img" />
+        <div class="logo-4d-scene" title="City Cargo 4D Dynamic Shield">
+          <div class="logo-4d-card" id="logo4dCard">
+            <div class="logo-4d-glow"></div>
+            <img src="./logo.png" alt="City Cargo Packers and Movers" class="brand-logo-img logo-4d-layer" />
+            <div class="logo-4d-flare"></div>
+            <div class="logo-4d-particles">
+              <span class="particle p1"></span>
+              <span class="particle p2"></span>
+              <span class="particle p3"></span>
+            </div>
+          </div>
+        </div>
       </a>
 
       <!-- Desktop Navigation -->
@@ -802,8 +813,14 @@
     <div class="footer-container">
       <div class="footer-top">
         <div class="footer-col-brand">
-          <a href="#" class="footer-brand-logo" aria-label="City Cargo Packers and Movers">
-            <img src="./logo.png" alt="City Cargo Packers and Movers" class="footer-logo-img" />
+          <a href="#" class="footer-brand-logo" id="footerBrandLogo" aria-label="City Cargo Packers and Movers">
+            <div class="logo-4d-scene">
+              <div class="logo-4d-card footer-4d-card">
+                <div class="logo-4d-glow"></div>
+                <img src="./logo.png" alt="City Cargo Packers and Movers" class="footer-logo-img logo-4d-layer" />
+                <div class="logo-4d-flare"></div>
+              </div>
+            </div>
           </a>
           <p class="footer-desc">
             City Cargo is India's premier digital freight network connecting verified vehicle owners with shippers,
@@ -951,7 +968,7 @@
   </aside>
 
   <!-- JavaScript Module -->
-  <script type="module" src="./main.js"></script>
+  <script type="module" src="./main.js?v=4d-anim"></script>
 </body>
 
 </html>

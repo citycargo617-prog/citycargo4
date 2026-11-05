@@ -313,20 +313,83 @@ svg {
   gap: 20px;
 }
 
-/* Brand Logo & Animations */
+/* ==========================================================================
+   Hyper-Realistic 4D Brand Logo System
+   ========================================================================== */
+
 .brand-logo {
   display: flex;
   align-items: center;
   position: relative;
   text-decoration: none;
   flex-shrink: 0;
-  overflow: hidden;
+  padding: 2px;
+}
+
+/* 4D Scene Container - Sets up the 3D perspective field */
+.logo-4d-scene {
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 6px 10px;
+  cursor: pointer;
   border-radius: var(--radius-md);
-  padding: 4px 6px;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-              filter 0.3s ease,
-              box-shadow 0.3s ease;
-  animation: logoEntrance 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* 4D Card - The 3D entity that floats, rotates, and tilts */
+.logo-4d-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform;
+  border-radius: var(--radius-md);
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: logo4DOrbit 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* 4D Continuous Orbital Gyro Trajectory */
+@keyframes logo4DOrbit {
+  0% {
+    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px) translateZ(0px);
+    filter: drop-shadow(0 6px 14px rgba(37, 99, 235, 0.25));
+  }
+  20% {
+    transform: perspective(1200px) rotateX(7deg) rotateY(-9deg) translateY(-5px) translateZ(16px);
+    filter: drop-shadow(-5px 12px 22px rgba(37, 99, 235, 0.42));
+  }
+  45% {
+    transform: perspective(1200px) rotateX(-6deg) rotateY(8deg) translateY(-8px) translateZ(22px);
+    filter: drop-shadow(6px 15px 28px rgba(2, 132, 199, 0.45));
+  }
+  70% {
+    transform: perspective(1200px) rotateX(6deg) rotateY(7deg) translateY(-4px) translateZ(14px);
+    filter: drop-shadow(4px 9px 20px rgba(99, 102, 241, 0.35));
+  }
+  85% {
+    transform: perspective(1200px) rotateX(-4deg) rotateY(-6deg) translateY(-2px) translateZ(8px);
+    filter: drop-shadow(-3px 7px 16px rgba(37, 99, 235, 0.3));
+  }
+  100% {
+    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px) translateZ(0px);
+    filter: drop-shadow(0 6px 14px rgba(37, 99, 235, 0.25));
+  }
+}
+
+/* 3D Elevated Logo Image Layer - Pops forward in Z-space */
+.logo-4d-layer {
+  transform: translateZ(28px);
+  -webkit-transform: translateZ(28px);
+  position: relative;
+  z-index: 2;
+  display: block;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
 }
 
 .brand-logo-img {
@@ -335,128 +398,186 @@ svg {
   max-width: 290px;
   object-fit: contain;
   display: block;
-  transform-origin: center center;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
-  animation: logoFloat 4.5s ease-in-out infinite 0.85s;
 }
 
-/* Page load entrance: smooth glide-in with subtle spring settle */
-@keyframes logoEntrance {
+/* 4D Pulsing Holographic Ambient Aura Glow */
+.logo-4d-glow {
+  position: absolute;
+  inset: -10px -16px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(37, 99, 235, 0.55) 0%,
+    rgba(56, 189, 248, 0.35) 40%,
+    rgba(99, 102, 241, 0.15) 60%,
+    transparent 80%
+  );
+  border-radius: 28px;
+  filter: blur(14px);
+  opacity: 0.85;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateZ(4px);
+  animation: logo4DGlowPulse 4s ease-in-out infinite alternate;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+@keyframes logo4DGlowPulse {
   0% {
-    opacity: 0;
-    transform: translateX(-16px) scale(0.95);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(2px) scale(1.02);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-/* Gentle ambient floating effect */
-@keyframes logoFloat {
-  0%, 100% {
-    transform: translateY(0);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.04));
+    opacity: 0.5;
+    transform: translateZ(4px) scale(0.92);
+    filter: blur(12px) hue-rotate(0deg);
   }
   50% {
-    transform: translateY(-3px);
-    filter: drop-shadow(0 8px 14px rgba(37, 99, 235, 0.16));
+    opacity: 0.95;
+    transform: translateZ(10px) scale(1.12);
+    filter: blur(18px) hue-rotate(45deg);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateZ(4px) scale(0.96);
+    filter: blur(14px) hue-rotate(90deg);
   }
 }
 
-/* Metallic shimmer & shine sweep beam */
-.brand-logo::after {
+/* 4D Holographic Specular Reflection Beam */
+.logo-4d-flare {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+  transform: translateZ(36px);
+}
+
+.logo-4d-flare::before {
   content: "";
   position: absolute;
   top: -60%;
-  left: -140%;
-  width: 70%;
+  left: -150%;
+  width: 75%;
   height: 220%;
   background: linear-gradient(
     115deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.15) 30%,
-    rgba(255, 255, 255, 0.75) 50%,
-    rgba(255, 255, 255, 0.15) 70%,
+    rgba(255, 255, 255, 0.2) 25%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(56, 189, 248, 0.5) 65%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-25deg);
+  animation: logo4DFlareSweep 5s ease-in-out infinite;
+}
+
+@keyframes logo4DFlareSweep {
+  0%, 55% {
+    left: -150%;
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    left: 170%;
+    opacity: 1;
+  }
+  85%, 100% {
+    left: 170%;
+    opacity: 0;
+  }
+}
+
+/* 4D Orbiting Energy Sparkles / Photons */
+.logo-4d-particles {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  opacity: 0;
-  animation: logoPeriodicShine 6.5s infinite ease-in-out 1.5s;
+  z-index: 5;
+  transform-style: preserve-3d;
 }
 
-/* Ambient periodic shine sweep */
-@keyframes logoPeriodicShine {
-  0%, 70% {
-    left: -140%;
-    opacity: 0;
-  }
-  75% {
-    opacity: 0.9;
-  }
-  90% {
-    left: 170%;
-    opacity: 0.9;
-  }
-  95%, 100% {
-    left: 170%;
-    opacity: 0;
-  }
+.logo-4d-particles .particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-/* Interactive hover & active states */
-.brand-logo:hover {
-  transform: translateY(-2px);
-  filter: drop-shadow(0 8px 18px rgba(37, 99, 235, 0.22));
+.logo-4d-particles .p1 {
+  width: 6px;
+  height: 6px;
+  top: 12%;
+  left: 12%;
+  background: #38BDF8;
+  box-shadow: 0 0 10px #38BDF8, 0 0 20px #2563EB;
+  animation: orbitP1 4.5s linear infinite;
 }
 
-.brand-logo:hover .brand-logo-img {
-  animation-play-state: paused;
-  transform: scale(1.035);
+.logo-4d-particles .p2 {
+  width: 5px;
+  height: 5px;
+  bottom: 14%;
+  right: 14%;
+  background: #60A5FA;
+  box-shadow: 0 0 10px #60A5FA, 0 0 16px #3B82F6;
+  animation: orbitP2 5.5s linear infinite;
 }
 
-.brand-logo:hover::after {
-  animation: logoHoverSweep 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+.logo-4d-particles .p3 {
+  width: 4px;
+  height: 4px;
+  top: 48%;
+  right: 6%;
+  background: #A78BFA;
+  box-shadow: 0 0 8px #A78BFA, 0 0 14px #8B5CF6;
+  animation: orbitP3 4s linear infinite;
 }
 
-@keyframes logoHoverSweep {
-  0% {
-    left: -140%;
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    left: 170%;
-    opacity: 1;
-  }
+@keyframes orbitP1 {
+  0% { transform: translate3d(0, 0, 24px) scale(0.8); opacity: 0.3; }
+  50% { transform: translate3d(40px, -14px, 45px) scale(1.4); opacity: 1; }
+  100% { transform: translate3d(0, 0, 24px) scale(0.8); opacity: 0.3; }
 }
 
-.brand-logo:active {
-  transform: scale(0.97) translateY(0);
+@keyframes orbitP2 {
+  0% { transform: translate3d(0, 0, 18px) scale(1); opacity: 0.4; }
+  50% { transform: translate3d(-35px, 12px, 40px) scale(1.5); opacity: 1; }
+  100% { transform: translate3d(0, 0, 18px) scale(1); opacity: 0.4; }
 }
 
+@keyframes orbitP3 {
+  0% { transform: translate3d(0, 0, 14px) scale(0.7); opacity: 0.2; }
+  50% { transform: translate3d(-24px, -18px, 35px) scale(1.3); opacity: 0.95; }
+  100% { transform: translate3d(0, 0, 14px) scale(0.7); opacity: 0.2; }
+}
+
+/* Interactive Hover & Focus Elevation */
+.logo-4d-scene:hover .logo-4d-card {
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.4);
+}
+
+.logo-4d-scene:hover .logo-4d-glow {
+  opacity: 1;
+  filter: blur(20px) hue-rotate(60deg);
+}
+
+.logo-4d-scene:active .logo-4d-card {
+  transform: perspective(1200px) scale(0.95) translateZ(-5px) !important;
+}
+
+/* Dark theme specific adjustments */
 [data-theme="dark-obsidian"] .brand-logo-img {
   background: #FFFFFF;
   padding: 6px 12px;
   border-radius: var(--radius-sm);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="dark-obsidian"] .brand-logo::after {
-  background: linear-gradient(
-    115deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(56, 189, 248, 0.3) 30%,
-    rgba(255, 255, 255, 0.85) 50%,
-    rgba(56, 189, 248, 0.3) 70%,
-    rgba(255, 255, 255, 0) 100%
+[data-theme="dark-obsidian"] .logo-4d-glow {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(56, 189, 248, 0.7) 0%,
+    rgba(37, 99, 235, 0.45) 40%,
+    transparent 75%
   );
 }
 
@@ -2392,51 +2513,34 @@ svg {
   display: inline-flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
   background: #FFFFFF;
-  padding: 8px 16px;
+  padding: 4px 10px;
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.3s ease;
   margin-bottom: 8px;
 }
 
 .footer-brand-logo:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
 }
 
 .footer-brand-logo:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-.footer-brand-logo::after {
-  content: "";
-  position: absolute;
-  top: -60%;
-  left: -140%;
-  width: 70%;
-  height: 220%;
-  background: linear-gradient(
-    115deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 30%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0.2) 70%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-25deg);
-  pointer-events: none;
-  opacity: 0;
+.footer-brand-logo .logo-4d-scene {
+  padding: 2px 4px;
 }
 
-.footer-brand-logo:hover::after {
-  animation: logoHoverSweep 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+.footer-4d-card {
+  animation: logo4DOrbit 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 0.75s;
 }
 
 .footer-logo-img {
-  height: 56px;
+  height: 52px;
   width: auto;
   max-width: 250px;
   object-fit: contain;
@@ -3395,10 +3499,14 @@ svg {
 @media (prefers-reduced-motion: reduce) {
   .brand-logo,
   .brand-logo-img,
-  .brand-logo::after,
+  .logo-4d-card,
+  .logo-4d-glow,
+  .logo-4d-flare::before,
+  .logo-4d-particles .particle,
   .footer-brand-logo,
-  .footer-brand-logo::after {
+  .footer-4d-card {
     animation: none !important;
     transition: none !important;
+    transform: none !important;
   }
 }
