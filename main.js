@@ -151,6 +151,7 @@ let selectedTruckId = 'tata-ace';
 let currentCalculatedRate = 2200;
 let currentPickupCity = 'Lucknow';
 let currentDropCity = 'Kanpur';
+let isBankDiscountApplied = false;
 
 // Utility: Haversine distance with road winding factor
 function calculateRoadDistance(city1, city2) {
@@ -234,6 +235,11 @@ function recalculateFreight() {
   // Goods type handling premium (e.g. household or pharma)
   if (goodsTypeSelect?.value === 'household') {
     rate = Math.round(rate * 1.15); // Includes packing supervision
+  }
+
+  // Bank & PSU employee privilege: flat 15% discount
+  if (isBankDiscountApplied) {
+    rate = Math.round(rate * 0.85);
   }
 
   // Ensure minimum threshold
@@ -553,6 +559,50 @@ document.addEventListener('DOMContentLoaded', () => {
   if (truckOwnerBtn) {
     truckOwnerBtn.addEventListener('click', () => {
       alert("City Cargo Fleet Network: Dispatch lines are ready to register your vehicle. Please call: +91 95550 13557 or message on WhatsApp to attach your truck.");
+    });
+  }
+
+  // Bank Privilege Modal Trigger & Logic
+  const bankPrivilegeBtn = document.getElementById('bankPrivilegeBtn');
+  const bankModal = document.getElementById('bankModal');
+  const closeBankModal = document.getElementById('closeBankModal');
+  const verifyBankForm = document.getElementById('verifyBankForm');
+  const bankSuccessState = document.getElementById('bankSuccessState');
+  const bankSuccessDoneBtn = document.getElementById('bankSuccessDoneBtn');
+
+  if (bankPrivilegeBtn && bankModal) {
+    bankPrivilegeBtn.addEventListener('click', () => {
+      if (verifyBankForm) verifyBankForm.style.display = 'block';
+      if (bankSuccessState) bankSuccessState.style.display = 'none';
+      bankModal.classList.add('open');
+    });
+  }
+
+  if (closeBankModal && bankModal) {
+    closeBankModal.addEventListener('click', () => bankModal.classList.remove('open'));
+  }
+
+  if (bankSuccessDoneBtn && bankModal) {
+    bankSuccessDoneBtn.addEventListener('click', () => {
+      bankModal.classList.remove('open');
+      const fareEl = document.getElementById('fare-estimator');
+      if (fareEl) fareEl.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  if (bankModal) {
+    bankModal.addEventListener('click', (e) => {
+      if (e.target === bankModal) bankModal.classList.remove('open');
+    });
+  }
+
+  if (verifyBankForm) {
+    verifyBankForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      isBankDiscountApplied = true;
+      if (verifyBankForm) verifyBankForm.style.display = 'none';
+      if (bankSuccessState) bankSuccessState.style.display = 'block';
+      recalculateFreight();
     });
   }
 

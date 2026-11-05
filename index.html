@@ -658,6 +658,39 @@
       </div>
     </section>
 
+    <!-- Bank & PSU Exclusive Privilege Banner -->
+    <section class="section-container privilege-section" id="privilegeSection">
+      <div class="privilege-card">
+        <div class="privilege-content">
+          <div class="privilege-badge">FLAT 15% OFF</div>
+          <h2 class="privilege-heading">Special Discount For Banking & PSU Professionals</h2>
+          <p class="privilege-desc">
+            We honor government and banking officers across India. All bank employees get an exclusive flat 15% discount on full truck load bookings and household relocations.
+          </p>
+
+          <div class="bank-partners-strip">
+            <span class="bank-tag">State Bank of India</span>
+            <span class="bank-tag">HDFC Bank</span>
+            <span class="bank-tag">ICICI Bank</span>
+            <span class="bank-tag">Punjab National Bank</span>
+            <span class="bank-tag">Reserve Bank of India</span>
+          </div>
+        </div>
+
+        <div class="privilege-cta-col">
+          <button class="btn-privilege-verify" id="bankPrivilegeBtn">
+            <span>Verify Employee ID</span>
+            <svg viewBox="0 0 24 24" class="icon-sm" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <p class="privilege-subtext">
+            Instant verification via official staff email or employee badge
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Google Customer Reviews Section -->
     <section class="section-container" id="reviews">
       <div class="section-header text-center">
@@ -951,6 +984,60 @@
           call/WhatsApp within 5 minutes.</p>
         <button class="btn-primary"
           onclick="document.getElementById('bookingModal').classList.remove('open');">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bank & PSU Employee Verification Modal -->
+  <div class="modal-backdrop" id="bankModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="badge" style="background: rgba(249, 115, 22, 0.12); color: #EA580C; margin-bottom: 6px; display: inline-block;">Exclusive Privilege</span>
+          <h3 class="modal-title">Bank & Govt Employee 15% Off</h3>
+          <p class="modal-sub">Verify your official credentials to immediately unlock flat 15% discount across all routes</p>
+        </div>
+        <button class="modal-close-btn" id="closeBankModal" aria-label="Close dialog">✕</button>
+      </div>
+
+      <form class="modal-form" id="verifyBankForm">
+        <div class="modal-input-group">
+          <label>Bank or Institution Name</label>
+          <select id="bankNameSelect" class="modal-select" required>
+            <option value="SBI">State Bank of India (SBI)</option>
+            <option value="HDFC">HDFC Bank</option>
+            <option value="ICICI">ICICI Bank</option>
+            <option value="PNB">Punjab National Bank (PNB)</option>
+            <option value="RBI">Reserve Bank of India (RBI)</option>
+            <option value="BOB">Bank of Baroda</option>
+            <option value="CANARA">Canara Bank</option>
+            <option value="UNION">Union Bank of India</option>
+            <option value="PSU">Other PSU / Government Body</option>
+          </select>
+        </div>
+
+        <div class="modal-input-group">
+          <label>Official Employee Email</label>
+          <input type="email" id="bankEmpEmail" placeholder="e.g. name@sbi.co.in" required />
+        </div>
+
+        <div class="modal-input-group">
+          <label>Employee Staff ID / PF Number</label>
+          <input type="text" id="bankEmpId" placeholder="e.g. EMP-94821" required />
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary" style="background: #EA580C; border-color: #EA580C; width: 100%;">
+            Verify & Apply 15% Discount
+          </button>
+        </div>
+      </form>
+
+      <div class="modal-success-state" id="bankSuccessState" style="display: none;">
+        <div class="success-icon" style="background: rgba(249, 115, 22, 0.15); color: #EA580C;">🎉</div>
+        <h3>15% Bank Discount Activated!</h3>
+        <p>Your official credentials have been verified. Flat 15% privilege discount has been applied to all routes.</p>
+        <button class="btn-primary" id="bankSuccessDoneBtn" style="background: #EA580C; border-color: #EA580C;">Done</button>
       </div>
     </div>
   </div>

@@ -2167,6 +2167,171 @@ svg {
 }
 
 /* ==========================================================================
+   Bank & PSU Employee Privilege Banner
+   ========================================================================== */
+
+.privilege-section {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.privilege-card {
+  padding: 40px 48px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #FFF9F5 0%, #FFFFFF 100%);
+  border: 1.5px solid #F97316;
+  box-shadow: 0 14px 40px rgba(249, 115, 22, 0.08);
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 36px;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.privilege-card:hover {
+  box-shadow: 0 18px 48px rgba(249, 115, 22, 0.14);
+}
+
+.privilege-badge {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  color: #EA580C;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.privilege-heading {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.privilege-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 22px;
+  max-width: 620px;
+}
+
+.bank-partners-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bank-tag {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1E293B;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.bank-tag:hover {
+  transform: translateY(-1px);
+  border-color: #F97316;
+}
+
+.privilege-cta-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.btn-privilege-verify {
+  width: 100%;
+  max-width: 280px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #EA580C;
+  color: #FFFFFF;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
+}
+
+.btn-privilege-verify:hover {
+  background: #C2410C;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(234, 88, 12, 0.45);
+}
+
+.btn-privilege-verify:active {
+  transform: scale(0.98);
+}
+
+.privilege-subtext {
+  font-size: 11.5px;
+  color: #64748B;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 260px;
+}
+
+/* Dark mode compatibility */
+[data-theme="dark-obsidian"] .privilege-card {
+  background: #0B132B;
+  border-color: #F97316;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark-obsidian"] .privilege-heading {
+  color: #F8FAFC;
+}
+
+[data-theme="dark-obsidian"] .privilege-desc {
+  color: #94A3B8;
+}
+
+[data-theme="dark-obsidian"] .bank-tag {
+  background: #1E293B;
+  border-color: #334155;
+  color: #E2E8F0;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .privilege-card {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 24px;
+  }
+
+  .privilege-badge {
+    font-size: 24px;
+  }
+
+  .privilege-heading {
+    font-size: 20px;
+  }
+
+  .btn-privilege-verify {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
    Reviews Section
    ========================================================================== */
 
