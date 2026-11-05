@@ -589,81 +589,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 15000);
 
-  // 14. 4D Interactive Holographic Logo Engine
-  function init4DLogo() {
-    const scenes = document.querySelectorAll('.logo-4d-scene');
-    scenes.forEach(scene => {
-      const card = scene.querySelector('.logo-4d-card');
-      const glow = scene.querySelector('.logo-4d-glow');
-      if (!card) return;
+  // 14. 3D Logo Choreography & Interactive Spin Engine
+  function init3DLogo() {
+    const logoCards = document.querySelectorAll('.brand-logo-3d');
+    logoCards.forEach(card => {
+      const circleWrapper = card.querySelector('.logo-circle-wrapper');
+      const citycargo = card.querySelector('.logo-text-citycargo');
+      const packers = card.querySelector('.logo-text-packers');
 
-      let rafId = null;
-      let targetRotateX = 0;
-      let targetRotateY = 0;
-      const targetTranslateZ = 24;
-      let currentRotateX = 0;
-      let currentRotateY = 0;
-      let isInteracting = false;
-
-      function updateTilt() {
-        if (!isInteracting) return;
-        currentRotateX += (targetRotateX - currentRotateX) * 0.18;
-        currentRotateY += (targetRotateY - currentRotateY) * 0.18;
-
-        card.style.transform = `perspective(1200px) rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg) translateZ(${targetTranslateZ}px) scale(1.05)`;
-        rafId = requestAnimationFrame(updateTilt);
-      }
-
-      function handleMove(clientX, clientY) {
-        const rect = scene.getBoundingClientRect();
-        const x = clientX - rect.left;
-        const y = clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        targetRotateX = ((y - centerY) / centerY) * -18;
-        targetRotateY = ((x - centerX) / centerX) * 18;
-
-        if (glow) {
-          const glowX = ((x - centerX) / centerX) * 14;
-          const glowY = ((y - centerY) / centerY) * 14;
-          glow.style.transform = `translate3d(${glowX.toFixed(1)}px, ${glowY.toFixed(1)}px, 8px) scale(1.15)`;
-          glow.style.opacity = '1';
+      // Replay choreographed entrance sequence on click
+      card.addEventListener('click', (e) => {
+        const anchor = card.closest('a');
+        if (anchor && anchor.getAttribute('href') === '#') {
+          e.preventDefault();
         }
 
-        if (!isInteracting) {
-          isInteracting = true;
-          card.style.animationPlayState = 'paused';
-          rafId = requestAnimationFrame(updateTilt);
+        if (circleWrapper) {
+          circleWrapper.style.animation = 'none';
+          void circleWrapper.offsetWidth;
+          circleWrapper.style.animation = 'emblemCircleEntrance 1.25s cubic-bezier(0.2, 0.8, 0.25, 1) both';
         }
-      }
-
-      function handleLeave() {
-        isInteracting = false;
-        if (rafId) cancelAnimationFrame(rafId);
-        card.style.transform = '';
-        if (glow) {
-          glow.style.transform = '';
-          glow.style.opacity = '';
+        if (citycargo) {
+          citycargo.style.animation = 'none';
+          void citycargo.offsetWidth;
+          citycargo.style.animation = 'citycargoFlyIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both';
         }
-        setTimeout(() => {
-          if (!isInteracting) {
-            card.style.animationPlayState = 'running';
-          }
-        }, 120);
-      }
-
-      scene.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
-      scene.addEventListener('mouseleave', handleLeave);
-
-      scene.addEventListener('touchmove', (e) => {
-        if (e.touches && e.touches[0]) {
-          handleMove(e.touches[0].clientX, e.touches[0].clientY);
+        if (packers) {
+          packers.style.animation = 'none';
+          void packers.offsetWidth;
+          packers.style.animation = 'packersFlyIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both';
         }
-      }, { passive: true });
-      scene.addEventListener('touchend', handleLeave);
+      });
     });
   }
 
-  init4DLogo();
+  init3DLogo();
 });
